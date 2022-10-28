@@ -19,6 +19,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all {
+                variant ->
+                    variant.outputs.all {
+                        output -> output.outputFileName = "结绳中文速码-" + defaultConfig.versionName + ".tpk"
+                    }
+            }
         }
     }
     compileOptions {
@@ -28,6 +34,7 @@ android {
 }
 
 dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
