@@ -37,7 +37,8 @@ public class HashObjectProcessor implements AnnotationProcessor {
 
     @Override
     public String getDescription() {
-        return "等值对象类，在进行对象比较的时候，只要所有变量值都相等，就判定两个对象相等";
+        return "等值对象类，只能在目标平台为JVM平台的工程中使用，应用该属性后，在进行对象比较的时候，" +
+                "只要所有变量值都相等，就判定两个对象相等";
     }
 
     @Override

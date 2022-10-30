@@ -8,5 +8,6 @@ public class AutoCodeCompilerAction extends TiecodeCompilerAction {
     public void onProvideAnnotation(AnnotationProvider provider) {
         provider.registerAnnotation(DataClassProcessor.DATA_CLASS, new DataClassProcessor());
         provider.registerAnnotation(HashObjectProcessor.HASH_OBJECT, new HashObjectProcessor());
+        provider.registerAnnotation(SerializeClassProcessor.SERIALIZE_CLASS, new SerializeClassProcessor());
     }
 }
