@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">结绳中文速码</string>
     <string name="plugin_desc">结绳中文速码插件，减少您的代码量！
-        本插件提供五个注解属性[数据模型类, 等值对象类, 序列化类, 参数输出名, 生成创建]，可用于快速生成代码</string>
+        本插件提供6个注解属性[数据模型类, 等值对象类, 序列化类, 参数输出名, 生成创建, 单例类]，可用于快速生成代码</string>
 </resources>

@@ -18,13 +18,13 @@
             android:value="true" />
         <meta-data
             android:name="plugin_name"
-            android:value="结绳中文速码" />
+            android:value="@string/app_name" />
         <meta-data
             android:name="plugin_versionCode"
             android:value="1" />
         <meta-data
             android:name="plugin_versionName"
-            android:value="1.0.3" />
+            android:value="1.0.4" />
         <meta-data
             android:name="plugin_targetVersion"
             android:value="1" />

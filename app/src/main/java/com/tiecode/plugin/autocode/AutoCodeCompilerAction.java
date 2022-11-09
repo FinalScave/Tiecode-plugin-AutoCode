@@ -13,5 +13,6 @@ public class AutoCodeCompilerAction extends TiecodeCompilerAction {
         provider.registerAnnotation(SerializeClassProcessor.SERIALIZE_CLASS, new SerializeClassProcessor());
         provider.registerAnnotation(ParameterNameProcessor.PARAM_NAME, new ParameterNameProcessor());
         provider.registerAnnotation(GenerateCreateProcessor.GENERATE_CREATE, new GenerateCreateProcessor());
+        provider.registerAnnotation(SingleInstanceProcessor.SINGLE, new SingleInstanceProcessor());
     }
 }
