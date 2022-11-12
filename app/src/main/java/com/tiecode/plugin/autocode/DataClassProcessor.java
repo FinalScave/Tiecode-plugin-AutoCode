@@ -74,6 +74,9 @@ public class DataClassProcessor implements AnnotationProcessor {
                 continue;
             }
             TCTree.TCVariableDeclare variable = (TCTree.TCVariableDeclare) member;
+            if (variable.modifiers.isStatic()) {
+                continue;
+            }
             variable.symbol.outputName = PinYinUtils.getHumpPinYin(String.valueOf(variable.name));
             variable.modifiers.remove(Modifier.PUBLIC);
             variable.modifiers.add(Modifier.PRIVATE);
@@ -171,8 +174,11 @@ public class DataClassProcessor implements AnnotationProcessor {
             if (member.getKind() != Tree.Kind.VARIABLE) {
                 continue;
             }
-            count++;
             TCTree.TCVariableDeclare variable = (TCTree.TCVariableDeclare) member;
+            if (variable.modifiers.isStatic()) {
+                continue;
+            }
+            count++;
             builder.append(" + ").append("\"");
             if (count > 1) {
                 builder.append(",\\n\\t");

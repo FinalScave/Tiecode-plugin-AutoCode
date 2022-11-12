@@ -77,6 +77,7 @@ public class SingleInstanceProcessor implements AnnotationProcessor {
         staticInstance.position = PositionImpl.of(line, column, line, column + 10);
         Modifiers modifiers = new Modifiers(Modifier.STATIC);
         modifiers.add(Modifier.PRIVATE);
+        modifiers.add(Modifier.REFER_VAR);
         staticInstance.modifiers = modifiers;
         //变量的Symbol
         Symbol.VarSymbol varSym = new Symbol.VarSymbol(staticInstance.name);
@@ -116,12 +117,14 @@ public class SingleInstanceProcessor implements AnnotationProcessor {
         returnSt.position = assignSt.position;
         statements.add(returnSt);
         //方法定义
+        TCTree.TCBlock methBlock = maker.block(statements);
         TCTree.TCMethodDeclare method = maker.method(Names.of("取实例"),
-                null, null, maker.identifier(clazz.name), block);
+                null, null, maker.identifier(clazz.name), methBlock);
         method.category = MethodTree.Category.NORMAL;
         method.modifiers = Modifiers.defaultModifiers();
         method.modifiers.add(Modifier.STATIC);
         method.position = anIf.position;
+        method.symbol.outputName = "getInstance";
         return method;
     }
 }

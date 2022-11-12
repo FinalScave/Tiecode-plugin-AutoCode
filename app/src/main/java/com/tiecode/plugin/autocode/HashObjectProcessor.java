@@ -86,8 +86,11 @@ public class HashObjectProcessor implements AnnotationProcessor {
             if (member.getKind() != Tree.Kind.VARIABLE) {
                 continue;
             }
-            count++;
             TCTree.TCVariableDeclare variable = (TCTree.TCVariableDeclare) member;
+            if (variable.modifiers.isStatic()) {
+                continue;
+            }
+            count++;
             if (count > 1) {
                 builder.append(", ");
             }
@@ -133,8 +136,11 @@ public class HashObjectProcessor implements AnnotationProcessor {
             if (member.getKind() != Tree.Kind.VARIABLE) {
                 continue;
             }
-            count++;
             TCTree.TCVariableDeclare variable = (TCTree.TCVariableDeclare) member;
+            if (variable.modifiers.isStatic()) {
+                continue;
+            }
+            count++;
             if (count > 1) {
                 TCTree.TCText and = maker.text(" && ");
                 trees.add(and);
