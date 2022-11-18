@@ -1,9 +1,8 @@
 package com.tiecode.plugin.autocode;
 
+import com.tiecode.platform.compiler.api.descriptor.Name;
 import com.tiecode.platform.compiler.source.tree.CodeReferenceTree;
 import com.tiecode.platform.compiler.source.tree.CodeTree;
-import com.tiecode.platform.compiler.source.tree.Tree;
-import com.tiecode.platform.compiler.source.util.Name;
 import com.tiecode.platform.compiler.toolchain.env.Context;
 import com.tiecode.platform.compiler.toolchain.env.Options;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationLevel;
@@ -14,7 +13,6 @@ import com.tiecode.platform.compiler.toolchain.tree.TreeMaker;
 import com.tiecode.platform.compiler.toolchain.tree.type.Type;
 import com.tiecode.platform.compiler.toolchain.tree.type.Types;
 import com.tiecode.platform.compiler.toolchain.util.Names;
-import com.tiecode.platform.compiler.util.PinYinUtils;
 
 import java.util.ArrayList;
 import java.util.List;

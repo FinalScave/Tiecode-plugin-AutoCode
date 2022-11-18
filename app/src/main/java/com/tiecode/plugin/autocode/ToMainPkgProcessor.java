@@ -1,25 +1,15 @@
 package com.tiecode.plugin.autocode;
 
-import com.tiecode.platform.compiler.source.tree.MethodTree;
-import com.tiecode.platform.compiler.source.util.Name;
-import com.tiecode.platform.compiler.source.util.PositionImpl;
+import com.tiecode.platform.compiler.api.descriptor.Name;
 import com.tiecode.platform.compiler.toolchain.env.CompilationEnv;
 import com.tiecode.platform.compiler.toolchain.env.Context;
-import com.tiecode.platform.compiler.toolchain.parser.TiecodeToken;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationLevel;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationProcessor;
 import com.tiecode.platform.compiler.toolchain.processor.Levels;
 import com.tiecode.platform.compiler.toolchain.tree.TCTree;
-import com.tiecode.platform.compiler.toolchain.tree.TreeMaker;
-import com.tiecode.platform.compiler.toolchain.tree.symbol.Modifier;
-import com.tiecode.platform.compiler.toolchain.tree.symbol.Modifiers;
-import com.tiecode.platform.compiler.toolchain.tree.symbol.Symbol;
 import com.tiecode.platform.compiler.toolchain.tree.type.Type;
 import com.tiecode.platform.compiler.toolchain.tree.type.Types;
 import com.tiecode.platform.compiler.toolchain.util.Names;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 输出到主包 注解处理器

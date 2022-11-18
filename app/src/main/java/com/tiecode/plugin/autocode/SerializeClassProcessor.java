@@ -1,17 +1,13 @@
 package com.tiecode.plugin.autocode;
 
-import com.tiecode.platform.compiler.source.tree.CodeReferenceTree;
-import com.tiecode.platform.compiler.source.tree.MemberReferenceTree;
-import com.tiecode.platform.compiler.source.tree.MethodTree;
-import com.tiecode.platform.compiler.source.tree.Tree;
-import com.tiecode.platform.compiler.source.util.Name;
-import com.tiecode.platform.compiler.source.util.PositionImpl;
+import com.tiecode.platform.compiler.api.descriptor.Name;
 import com.tiecode.platform.compiler.toolchain.env.Context;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationLevel;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationProcessor;
 import com.tiecode.platform.compiler.toolchain.processor.Levels;
 import com.tiecode.platform.compiler.toolchain.tree.TCTree;
 import com.tiecode.platform.compiler.toolchain.tree.TreeMaker;
+import com.tiecode.platform.compiler.toolchain.tree.code.PositionImpl;
 import com.tiecode.platform.compiler.toolchain.tree.symbol.ExtraData;
 import com.tiecode.platform.compiler.toolchain.tree.symbol.Modifier;
 import com.tiecode.platform.compiler.toolchain.tree.symbol.Modifiers;

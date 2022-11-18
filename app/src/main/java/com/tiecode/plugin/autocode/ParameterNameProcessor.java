@@ -1,9 +1,10 @@
 package com.tiecode.plugin.autocode;
 
-import com.tiecode.platform.compiler.source.util.Name;
-import com.tiecode.platform.compiler.source.util.PositionImpl;
-import com.tiecode.platform.compiler.toolchain.completer.Checker;
+import com.tiecode.platform.compiler.api.descriptor.Name;
+import com.tiecode.platform.compiler.api.log.Diagnostic;
+import com.tiecode.platform.compiler.api.log.Messager;
 import com.tiecode.platform.compiler.toolchain.env.Context;
+import com.tiecode.platform.compiler.toolchain.log.TCDiagnostic;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationLevel;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationProcessor;
 import com.tiecode.platform.compiler.toolchain.processor.Levels;
@@ -66,8 +67,13 @@ public class ParameterNameProcessor implements AnnotationProcessor {
         String value = (String) annotation.getArgConstValue();
         String[] names = value.split(",");
         if (names.length != method.parameters.size()) {
-            Checker checker = context.get(Checker.key);
-            checker.reportError(annotation, "parameter.size.not.match");
+            Messager messager = context.get(Messager.key);
+            TCDiagnostic diagnostic = new TCDiagnostic(method.symbol.getEnclosingClass().fileObject);
+            diagnostic.setMessage("参数个数不匹配");
+            diagnostic.setKind(Diagnostic.Kind.ERROR);
+            diagnostic.setStartLine(annotation.position.getStartLine());
+            diagnostic.setStartColumn(annotation.position.getStartColumn());
+            messager.diagnostic(diagnostic);
             return;
         }
         for (int i = 0; i < method.parameters.size(); i++) {

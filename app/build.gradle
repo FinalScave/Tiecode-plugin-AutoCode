@@ -10,7 +10,7 @@ android {
         minSdk 21
         targetSdk 28
         versionCode 1
-        versionName "1.0.5"
+        versionName "1.0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly("cn.tiecode:plugin-api:1.0.0-alpha29")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

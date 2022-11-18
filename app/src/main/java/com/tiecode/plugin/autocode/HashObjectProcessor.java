@@ -1,8 +1,8 @@
 package com.tiecode.plugin.autocode;
 
+import com.tiecode.platform.compiler.api.descriptor.Name;
 import com.tiecode.platform.compiler.source.tree.CodeReferenceTree;
 import com.tiecode.platform.compiler.source.tree.Tree;
-import com.tiecode.platform.compiler.source.util.Name;
 import com.tiecode.platform.compiler.toolchain.env.Context;
 import com.tiecode.platform.compiler.toolchain.env.Options;
 import com.tiecode.platform.compiler.toolchain.processor.AnnotationLevel;

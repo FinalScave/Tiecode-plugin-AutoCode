@@ -16,5 +16,6 @@ public class AutoCodeCompilerAction extends TiecodeCompilerAction {
         provider.registerAnnotation(SingleInstanceProcessor.SINGLE, new SingleInstanceProcessor());
         provider.registerAnnotation(ToMainPkgProcessor.TO_MAIN_PKG, new ToMainPkgProcessor());
         provider.registerAnnotation(CustomComponentProcessor.CUSTOM_COMPONENT, new CustomComponentProcessor());
+        provider.registerAnnotation(CleanUpProcessor.CLEAN_UP, new CleanUpProcessor());
     }
 }
