@@ -1,4 +1,4 @@
-package com.tiecode.plugin.autocode;
+package com.tiecode.plugin.autocode.processor;
 
 import com.tiecode.platform.compiler.api.descriptor.Name;
 import com.tiecode.platform.compiler.source.tree.MethodTree;
